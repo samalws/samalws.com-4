@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # $1: sources dir, defaults to "sources"
 # $2: outputs dir, defaults to "outputs"
@@ -23,8 +23,14 @@ done
 
 cp -r "$myDir/resources" "$outputs/resources"
 
+repl="./$myDir/replace.py"
+
 for file in $(cd "$sources"; find . -type f -name "*.html"); do
   dir=$(dirname "$sources/$file")
   relpath=$(realpath --relative-to="$dir" "$sources")
-  cat "$sources/$file" | "./$myDir/genPage.py" "$myDir/template.html" "$relpath" > "$outputs/$file"
+    title=$(cat "$sources/$file" | head -1)
+   header=$(cat "$sources/$file" | tail +2 | head -1)
+  content=$(cat "$sources/$file" | tail +3)
+  fileContents=$(cat "$sources/$file")
+  cat "$myDir/template.html" | "$repl" PATH "$relpath" | "$repl" TITLE "$title" | "$repl" HEADER "$header" | "$repl" CONTENT "$content" > "$outputs/$file"
 done
