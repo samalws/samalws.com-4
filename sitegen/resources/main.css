@@ -1,0 +1,40 @@
+body {
+  background-color: #bbb;
+  font-family: sans-serif;
+}
+
+#content {
+  width: 50em;
+  background-color: #ddd;
+  margin: 1em auto;
+  padding: .5em 2em;
+  border-radius: .5em;
+}
+
+h1 {
+  color: #200;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #400;
+}
+
+code {
+  color: #200;
+  background-color: #ccc;
+  padding: .3em;
+  border-radius: .4em;
+}
+
+p {
+  color: #200;
+}
+
+a {
+  color: #200;
+}
+
+.blk {
+  display: block;
+}
