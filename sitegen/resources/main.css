@@ -1,6 +1,7 @@
 body {
   background-color: #bbb;
   font-family: sans-serif;
+  font-size: large;
 }
 
 #content {
@@ -9,6 +10,7 @@ body {
   margin: 1em auto;
   padding: .5em 2em;
   border-radius: .5em;
+  line-height: 1.5;
 }
 
 h1 {
@@ -34,6 +36,12 @@ p {
 a {
   color: #200;
 }
+
+/*
+li {
+  padding: .4em 0;
+}
+*/
 
 .blk {
   display: block;

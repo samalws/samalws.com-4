@@ -21,6 +21,7 @@ for dir in $(cd "$sources"; find . -type d); do
   mkdir -p "$outputs/$dir"
 done
 
+rm -r "$outputs/resources"
 cp -r "$myDir/resources" "$outputs/resources"
 
 repl="./$myDir/replace.py"
