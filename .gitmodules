@@ -1,0 +1,3 @@
+[submodule "etcSources/mapgen"]
+	path = etcSources/mapgen
+	url = https://github.com/samalws/mapgen
